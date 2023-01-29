@@ -1,0 +1,24 @@
+appdaemon:
+  latitude: 0
+  longitude: 0
+  elevation: 30
+  time_zone: Europe/Berlin
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://<HOME_ASSISTANT_URL>:8123
+      token: <HOME_ASSISTANT_TOKEN>
+    MQTT:
+      type: mqtt
+      namespace: mqtt
+      client_id: "appdaemon"
+      client_host: friday.fritz.box
+      client_port: 1883
+      client_user: "nspanel"
+      client_password: "nspanel"
+      client_topics: NONE
+http:
+  url: http://<APPDAEMON_URL>::5050
+admin:
+api:
+hadashboard:

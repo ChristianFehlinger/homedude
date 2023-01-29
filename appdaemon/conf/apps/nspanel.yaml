@@ -1,0 +1,32 @@
+---
+nspanel-1:
+  module: nspanel-lovelace-ui
+  class: NsPanelLovelaceUIManager
+  config:
+    panelRecvTopic: "tele/tasmota_E81C74/RESULT"
+    panelSendTopic: "cmnd/tasmota_E81C74/CustomSend"
+    updateMode: "auto-notify"
+    sleepTimeout: 20
+    sleepBrightness:
+      - time: "7:00:00"
+        value: 5
+      - time: "23:00:00"
+        value: 0
+    locale: "de_DE" # used for translations in translations.py and for localized date if babel python package is installed
+    screensaver:
+      entity: weather.openweathermap
+      weatherOverrideForecast3:
+        entity: sensor.hmip_stho_0000000000_actual_temperature
+        name: Außen
+        icon: home
+      alternativeLayout: True
+    cards:
+      - type: cardEntities
+        entities:
+          - entity: light.kuche
+            name: Küche
+          - entity: light.stehlampe
+            name: Stehlampe
+          - entity: light.wohnzimmer
+            name: Blitz
+        title: Licht
